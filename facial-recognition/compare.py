@@ -19,21 +19,22 @@ for f in glob.glob("*.png"):
 
 i = 0
 while i < fileCount:
-    baseImages.append(fr.load_image_file(baseFilenames[i]))
-
+	baseImages.append(fr.load_image_file(baseFilenames[i]))
+	i += 1
+"""
 #Webserver
 hostName = ""
 hostPort = 8122
 
 class MyServer(BaseHTTPRequestHandler):
 	def do_POST(self):
-        global imageArray
+		global imageArray
 		print( "Incoming HTTP: ", self.path )
         
 		contentLength = int(self.headers['Contect Length'])
 		postData = self.rfile.read(contentLength)
-        img = base64.decodebytes(postData)
-        imageArray = np.array(img, dtype='uint8')
+		img = base64.decodebytes(postData)
+		imageArray = np.array(img, dtype='uint8')
 
 		self.send_response()
 		client.close()
@@ -49,7 +50,7 @@ except KeyboardInterrupt:
 
 myServer.server_close()
 print(time.asctime(), "Server Stops - %s:%s" % (hostName, hostPort))
-
+"""
 #Comparison
 for fname in baseFilenames:
     baseNames.append(fname[0:(len(fname)-4)])
