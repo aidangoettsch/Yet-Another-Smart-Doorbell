@@ -29,7 +29,7 @@ for img in baseImages:
 hostName = ""
 hostPort = 6969
 
-cache_file = open("cache.txt", "wb")
+cache_file = open("cache.txt", "wb+")
 
 class MyServer(BaseHTTPRequestHandler):
 	def do_POST(self):
