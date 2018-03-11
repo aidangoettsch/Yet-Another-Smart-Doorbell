@@ -29,7 +29,7 @@ class MyServer(BaseHTTPRequestHandler):
 	def do_POST(self):
         global imageArray
 		print( "Incoming HTTP: ", self.path )
-
+        
 		contentLength = int(self.headers['Contect Length'])
 		postData = self.rfile.read(contentLength)
         img = base64.decodebytes(postData)
