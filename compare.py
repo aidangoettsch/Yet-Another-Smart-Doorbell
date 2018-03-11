@@ -1,7 +1,7 @@
 import face_recognition as fr
 import os, glob
 
-path, dirs, files = os.walk("/pictures/base").next()
+path, dirs, files = next(os.walk("/pictures/base"))
 fileCount = len(files)
 
 baseImages = []
