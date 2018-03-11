@@ -1,15 +1,17 @@
 import face_recognition as fr
 import os, glob
 
-path, dirs, files = next(os.walk("/pictures/base"))
-fileCount = len(files)
+os.chroot("/facial-recognition/")
+fileCount = len(os.listdir("/pictures/base/"))
+print(fileCount)
 
 baseImages = []
 baseNames = []
 
 os.chdir("/pictures/base")
-for file in glob.glob("*.png"):
-    baseNames.append(file)
+for f in glob.glob("*.png"):
+    baseNames.append(f)
+    print(f)
 
 i = 0
 while i < fileCount:
