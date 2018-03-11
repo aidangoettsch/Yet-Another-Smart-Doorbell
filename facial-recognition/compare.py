@@ -28,7 +28,7 @@ for img in baseImages:
 
 #Webserver
 hostName = ""
-hostPort = 8122
+hostPort = 6969
 
 class MyServer(BaseHTTPRequestHandler):
 	def do_POST(self):
